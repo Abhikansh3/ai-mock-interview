@@ -1,6 +1,8 @@
 import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
+import ThemeToggle from "@/components/ui/theme-toggle";
+
 
 import "./globals.css";
 
@@ -20,8 +22,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${monaSans.className} pattern`}>
+    <html lang="en">
+    <body
+  className={`
+    ${monaSans.className}
+    bg-[var(--bg-main)] text-[var(--text-main)]
+    dark:pattern dark:bg-black dark:text-white
+  `}
+>
+
+        
+        {/* Top Right Theme Button */}
+        <div className="flex justify-end p-4">
+          <ThemeToggle />
+        </div>
+
         {children}
 
         <Toaster />

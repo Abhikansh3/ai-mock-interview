@@ -265,13 +265,24 @@
     @apply flex mx-auto max-w-7xl flex-col gap-12 my-12 px-16 max-sm:px-4 max-sm:my-8;
   }
 
-  .card-cta {
-    @apply flex flex-row blue-gradient-dark rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
-  }
+  /* Hero Section */
+.card-cta {
+  @apply
+  rounded-2xl
+  p-8
+  flex items-center justify-between gap-8
+  bg-white
+  border border-slate-200
+  shadow-sm
+  dark:bg-gradient-to-br dark:from-[#0b0f1a] dark:to-black
+  dark:border-gray-800;
+}
 
-  .interviews-section {
-    @apply flex flex-wrap gap-4 max-lg:flex-col w-full items-stretch;
-  }
+
+
+ .interviews-section {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
 
   .interview-text {
     @apply text-lg text-center text-white;
@@ -331,4 +342,24 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* ---------- LIGHT THEME ---------- */
+:root {
+  --bg-main: #f8fafc;      /* slate-50 */
+  --bg-card: #ffffff;
+  --text-main: #0f172a;    /* slate-900 */
+  --text-muted: #475569;  /* slate-600 */
+  --border-light: #e2e8f0; /* slate-200 */
+}
+
+/* Light mode */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Dark mode untouched */
+.dark body {
+  background-color: #000000;
+  color: #ffffff;
 }
